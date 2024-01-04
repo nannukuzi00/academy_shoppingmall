@@ -58,7 +58,10 @@
 </head>
 
 <body>
+<div class="button_container">
 <button class="custom-btn btn-16" onclick="location.href='/mypage/myDetailInfo' ">내정보 수정</button>
+<button class="custom-btn btn-16" onclick="location.href='/mypage/wishList' ">찜목록</button>
+</div>
 <%--orders 와 orders_details를 조인해서 같은 VO로 묶어서 가져와라 --%>
 <br><br>
 	<table>
@@ -89,7 +92,7 @@
 		    <tr><%--실제 상품 --%>
 		    
 		     <td><%--주문번호 --%>
-		      <a href="${cpath }/mypage/myOrderDetail?orders_idx=${order.orders_idx}"><span>${order.orders_idx } 주문 상세</span></a>
+		      <a href="${cpath }/mypage/myOrderDetail?orders_idx=${order.orders_idx}"><span>${order.orders_idx }.   주문 상세</span></a>
 		      <%--컨트롤러에서 받아서 주문 상세페이지 띄워주자 --%>
 		     </td>
 		     
@@ -135,7 +138,7 @@
 				  <a href="javascript:fn_cancel_order('${order.orders_idx}')" class="btn-gradient green small">주문 취소</a>
 		      	 </c:when>
 		      	 <c:otherwise>
-				  <a  class="btn-gradient green small" style =  "rgb(88,68,68); opacity : 0.3;" >Button</a>
+				  <a  class="btn-gradient green small" style =  "rgb(88,68,68); opacity : 0.3;" >주문 취소</a>
 		      	 </c:otherwise>
 		      	</c:choose>
 		     </td>

@@ -9,9 +9,33 @@ th, td {
     padding: 10px;
 }
 */
+.delivery_state{
+    font-size: 2.0em;
+}
+.button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_container > button{
+    margin-top: 20px;
+}
+
+#plusminus{
+    width: 5px;
+}
+
+.delivery_state{
+    margin:0 auto;
+    text-align: center;
+    background-color: rgb(88,68,68,0.1);
+    color: rgb(255,0,0,0.7);
+}
+
 .thumbnails{
-    width: 30px;
-    height: 50px;
+    width: 100px;
+    height: 150px;
 }
 
 .od_title{
@@ -29,7 +53,7 @@ th, td {
     flex-direction: column;
 }
 
-.menu, page{
+.info_menu, page{
     padding-left: 140px;
 }
 
