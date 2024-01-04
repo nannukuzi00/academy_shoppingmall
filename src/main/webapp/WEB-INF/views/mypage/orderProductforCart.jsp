@@ -2,7 +2,7 @@
          pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
 
-<link rel="stylesheet" href="${cpath}/resources/css/mypage.css">
+<link rel="stylesheet" href="${cpath}/resources/css/style.css">
 <head>
     <script>
     window.onload=function()
@@ -33,8 +33,8 @@
 
 <div class="container">
 
-        <table>
-        <tr>
+        <table class="product-container">
+        <tr class="product-header">
             <th class="product-header-item">제품명</th>
             <th class="product-header-item">가격</th>
             <th class="product-header-item">색상</th>
@@ -44,8 +44,17 @@
         </tr>
 
         <c:forEach var="item" items="${CO_list}">
-            <tr>
+            <tr class="product-row">
                 <td class="product-item">${item.products_name}</td>
+                <td><c:set var="imagePath" value="/springboot/" />
+                    <c:forEach items="${img}" var="img" begin="0" end="0">
+                        <div>
+                            <img class="thumbnails"
+                                 src="${imagePath}${item.products_idx}/${img.img_url}"
+                                 alt="Product Image"
+                                 width="100px" height="150px"/>
+                        </div>
+                    </c:forEach></td>
                 <td class="product-item">${item.products_price}</td>
                 <td class="product-item">${item.color}</td>
                 <td class="product-item">${item.size_product}</td>
