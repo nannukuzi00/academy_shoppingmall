@@ -19,62 +19,41 @@
                         </c:forEach>
                     </select>
                     </td>
-
                 </tr>
-
                 <tr>
                     <th><label for="products_name">상품명</label></th>
                     <td><input type="text" name="products_name" id="products_name" placeholder="상품명 입력해주세요"></td>
                 </tr>
-
                 <tr>
                     <th><label for="products_price">가격</label></th>
                     <td><input type="number" name="products_price" id="products_price" placeholder="가격을 기입해주세요"></td>
                 </tr>
-
                 <tr>
                     <th><label for="products_stock">수량</label></th>
                     <td><input type="number" name="products_stock" id="products_stock"></td>
                 </tr>
-
-
                 <tr>
                     <th>사이즈</th>
-                    <td>
-                        <c:forEach items="${sizes}" var="size">
-                        <input type="checkbox" name="sizes" value="${size.size_idx}">${size.size_product}
-                    </c:forEach>
+                    <td><c:forEach items="${sizes}" var="size">
+                        <input type="checkbox" name="sizes" value="${size.size_idx}">${size.size_product}</c:forEach>
                     </td>
-
                 </tr>
-
-                <tr>
-                    <th>색상</th>
+                <tr><th>색상</th>
                     <td>
                         <select name="colors" multiple = "multiple">
                         <c:forEach items="${colors}" var="colors">
                             <option value="${colors.color_idx}">${colors.color}</option>
                         </c:forEach>
                     </select>
-                    </td>
-
-                </tr>
-
+                    </td></tr>
                 <tr>
                     <th><label for="files"> 이미지 파일</label></th>
                     <td>
                         <input type="file" multiple  name="files" id="files" accept="image/*"><br>
                         <output id="output"></output>
                     </td>
-
-
                 </tr>
-
-                <tr>
-                    <th>
-                        <input type="submit" id="submitButn" value="등록하기">
-                    </th>
-                </tr>
+                <tr><th><input type="submit" id="submitButn" value="등록하기"></th></tr>
             </table>
         </form>
 

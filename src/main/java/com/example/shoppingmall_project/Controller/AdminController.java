@@ -106,12 +106,6 @@ public class AdminController {
                                  @RequestParam(value = "files", required = false)MultipartFile[] files){
 
         // 상품 등록
-        System.out.println("TEST : cate1 : "+ input.getCategories_idx());
-        System.out.println("TEST : name1 : "+ input.getProducts_name());
-        System.out.println("TEST : price1 : "+ input.getProducts_price());
-        System.out.println("TEST : stock1 : "+ input.getProducts_stock());
-
-        System.out.println("TEST : color1 : "+ colors.toString());
 
         adminService.addProductdata(input, sizes, colors, files);
 

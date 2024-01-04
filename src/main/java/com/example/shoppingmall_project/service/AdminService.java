@@ -63,8 +63,6 @@ public class AdminService {
 
 
     public void addProductdata(AddProductVO input, List<Integer> sizes, List<Integer> colors, MultipartFile[] files){
-//
-        System.out.println("TEST : cate : " + input.getCategories_idx());
 
         AddProductVO productInfo = new AddProductVO(
                 input.getCategories_idx(),
@@ -72,16 +70,9 @@ public class AdminService {
                 input.getProducts_price(),
                 input.getProducts_stock()
         );
-        System.out.println("TEST : cate2 : " + productInfo.getCategories_idx());
-        System.out.println("TEST : name2 : " + productInfo.getProducts_name());
-        System.out.println("TEST : price2 : " + productInfo.getProducts_price());
-        System.out.println("TEST : stock2 : " + productInfo.getProducts_stock());
         dao.insertProduct(productInfo);
 
-        System.out.println("TEST2 : " + productInfo.getProducts_idx());
         int products_idx = productInfo.getProducts_idx();
-
-        System.out.println(products_idx);
 
         if(sizes != null){
             for (Integer sizeIdx : sizes) {
@@ -141,17 +132,7 @@ public class AdminService {
                 }
 
                 dao.insertProductImg(products_idx, fileName);
-
-
             }
-
-
-
-
-
-
-
-
         }
 
     }
